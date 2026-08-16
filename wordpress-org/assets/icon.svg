@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">FindIP Shield</title>
+  <desc id="desc">FindIP Shield plugin icon.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071a3a"/>
+      <stop offset="1" stop-color="#10062d"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="52" y1="35" x2="204" y2="224" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39c6f6"/>
+      <stop offset="0.52" stop-color="#3478ff"/>
+      <stop offset="1" stop-color="#914cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop stop-color="#376eff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#376eff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="52" fill="url(#background)"/>
+  <circle cx="128" cy="120" r="112" fill="url(#glow)"/>
+  <path d="M128 29L204 58V114C204 163 172 205 128 222C84 205 52 163 52 114V58Z" fill="none" stroke="#173f79" stroke-width="9"/>
+  <path d="M128 38L194 63V114C194 156 167 193 128 208C89 193 62 156 62 114V63Z" fill="url(#shield)"/>
+  <path d="M91 119L117 145L166 89" fill="none" stroke="#ffffff" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
