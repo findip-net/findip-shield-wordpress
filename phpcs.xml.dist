@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="FindIP Shield WordPress">
+	<description>WordPress.org coding and PHP compatibility checks.</description>
+	<file>findip-shield</file>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<arg name="extensions" value="php"/>
+	<arg value="sp"/>
+	<rule ref="WordPress"/>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="findip-shield"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="PHPCompatibilityWP">
+		<config name="testVersion" value="7.4-"/>
+	</rule>
+</ruleset>
