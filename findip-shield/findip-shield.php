@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       FindIP Shield – Visitor Risk Intelligence
+ * Plugin Name:       FindIP Shield
  * Plugin URI:        https://www.findip.net/shield/overview
  * Description:       Adds privacy-conscious visitor risk intelligence to WordPress and WooCommerce without collecting form values.
  * Version:           0.1.0
