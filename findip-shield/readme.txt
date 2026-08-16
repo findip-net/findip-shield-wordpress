@@ -74,6 +74,10 @@ No. The core WordPress integration works without WooCommerce. WooCommerce-specif
 
 Email info@findip.net. Report security issues privately to security@findip.net.
 
+== Screenshots ==
+
+1. Configure the public site key, privacy mode, consent behavior, and WooCommerce events from one settings screen.
+
 == Changelog ==
 
 = 0.1.0 =

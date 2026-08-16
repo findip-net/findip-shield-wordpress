@@ -13,6 +13,7 @@ Expected files:
 - `icon-128x128.png`
 - `icon-256x256.png`
 - `icon.svg`
+- `screenshot-1.png`
 
 The artwork is original FindIP branding and is distributed under GPL-2.0-or-later
 for use with the FindIP Shield WordPress plugin listing.
