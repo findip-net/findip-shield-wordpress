@@ -1,5 +1,5 @@
-=== FindIP Shield – Visitor Risk Intelligence ===
-Contributors: findip-net
+=== FindIP Shield ===
+Contributors: findipshield
 Tags: fraud detection, vpn detection, proxy detection, woocommerce, visitor risk
 Requires at least: 6.4
 Tested up to: 7.0
@@ -82,4 +82,4 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 
 = 0.1.0 =
 
-* Initial development release.
+* Initial release.
