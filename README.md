@@ -4,9 +4,9 @@ Official WordPress and WooCommerce integration for [FindIP Shield](https://www.f
 
 The installable plugin is in [`findip-shield/`](findip-shield/).
 
-## Development status
+## Release status
 
-Version `0.1.0` is an MVP intended for local and staging validation before submission to the WordPress.org Plugin Directory. It uses strict privacy defaults, never reads form values, and does not automatically enforce risk decisions.
+Version `0.1.0` is approved for the WordPress.org Plugin Directory and is being prepared for its initial release. It uses strict privacy defaults, never reads form values, and does not automatically enforce risk decisions.
 
 ## Local test
 

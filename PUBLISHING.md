@@ -19,7 +19,7 @@ git config user.email
 
 ## WordPress.org
 
-- Proposed plugin slug: `findip-shield`
+- Approved plugin slug: `findip-shield`
 - Approved owner username: `findipshield`
 - Registration and review email: `info@findip.net`
 - Support contact: `info@findip.net`

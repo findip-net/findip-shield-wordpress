@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class FindIP_Shield {
 	const OPTION_NAME = 'findip_shield_settings';
-	const SDK_VERSION = '1.0.5';
-	const SDK_SRI     = 'sha384-rwISMrRaCS6RMzWGm8J3VimsKtyhHuJwOc+ZmUYZPyynHyU5kICyoXXQsYlTp/5e';
+	const SDK_VERSION = '1.0.6';
+	const SDK_SRI     = 'sha384-bF++3gi7opAIskDJwzrfKVtMMSWIB5kqFFuUvIPS/edUz7kXzFpYOMoBBypjBOVx';
 
 	/**
 	 * Singleton instance.
