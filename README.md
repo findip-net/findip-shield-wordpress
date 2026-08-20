@@ -6,7 +6,7 @@ The installable plugin is in [`findip-shield/`](findip-shield/).
 
 ## Release status
 
-Version `0.1.0` is approved for the WordPress.org Plugin Directory and is being prepared for its initial release. It uses strict privacy defaults, never reads form values, and does not automatically enforce risk decisions.
+FindIP Shield is available from the [WordPress.org Plugin Directory](https://wordpress.org/plugins/findip-shield/). Version `0.1.1` pins SDK 1.0.7 and has been live-tested for the core WordPress flow on WordPress 7.1. It uses strict privacy defaults, never reads form values, and does not automatically enforce risk decisions. WooCommerce-specific flows remain a separate compatibility test requirement.
 
 ## Local test
 

@@ -4,7 +4,7 @@ Tags: fraud detection, vpn detection, proxy detection, woocommerce, visitor risk
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 1. Configure the public site key, privacy mode, consent behavior, and WooCommerce events from one settings screen.
 
 == Changelog ==
+
+= 0.1.1 =
+
+* Pin FindIP Shield SDK 1.0.7 so automatic session-start events are emitted once per browser session across full page navigation.
+* Confirm core plugin compatibility with WordPress 7.1 on a live domain-bound test site.
 
 = 0.1.0 =
 
