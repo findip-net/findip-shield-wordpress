@@ -4,7 +4,7 @@ Tags: fraud detection, vpn detection, proxy detection, woocommerce, visitor risk
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,10 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 1. Configure the public site key, privacy mode, consent behavior, and WooCommerce events from one settings screen.
 
 == Changelog ==
+
+= 0.1.3 =
+
+* Normalize localized boolean settings so the automatic-tracking and form-detection toggles and the consent-required flag work; WordPress localizes booleans as strings, which previously made those toggles ineffective.
 
 = 0.1.2 =
 
