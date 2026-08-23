@@ -5,20 +5,39 @@
   var shield = window.FindIP;
   var sentPostConsentPageEvents = false;
 
+  // wp_localize_script casts booleans to strings ("1" / ""), so every flag
+  // must be normalized before comparison.
+  function flag(value, fallback) {
+    if (value === true || value === '1' || value === 1) {
+      return true;
+    }
+
+    if (value === false || value === '' || value === '0' || value === 0) {
+      return false;
+    }
+
+    return fallback;
+  }
+
+  var consentRequired = flag(settings.consentRequired, false);
+  var autoTrack = flag(settings.autoTrack, true);
+  var autoDetectForms = flag(settings.autoDetectForms, true);
+  var woocommerceEnabled = flag(settings.woocommerce, false);
+
   if (!shield || !settings.siteKey) {
     return;
   }
 
-  if (settings.consentRequired) {
+  if (consentRequired) {
     shield.setConsent(false);
   }
 
   shield.init({
     siteKey: settings.siteKey,
     privacyMode: settings.privacyMode || 'strict',
-    autoTrack: settings.autoTrack !== false,
-    autoDetectForms: settings.autoDetectForms !== false,
-    consentRequired: settings.consentRequired === true,
+    autoTrack: autoTrack,
+    autoDetectForms: autoDetectForms,
+    consentRequired: consentRequired,
     noConsentMode: settings.noConsentMode || 'strict',
     integration: settings.integration || 'wordpress',
     pushToDataLayer: true
@@ -41,7 +60,7 @@
     }
   });
 
-  if (!settings.woocommerce) {
+  if (!woocommerceEnabled) {
     return;
   }
 
