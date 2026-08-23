@@ -20,6 +20,7 @@
     autoDetectForms: settings.autoDetectForms !== false,
     consentRequired: settings.consentRequired === true,
     noConsentMode: settings.noConsentMode || 'strict',
+    integration: settings.integration || 'wordpress',
     pushToDataLayer: true
   });
 
