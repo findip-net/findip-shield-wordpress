@@ -4,7 +4,7 @@ Tags: fraud detection, vpn detection, proxy detection, woocommerce, visitor risk
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,11 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 1. Configure the public site key, privacy mode, consent behavior, and WooCommerce events from one settings screen.
 
 == Changelog ==
+
+= 0.1.2 =
+
+* Pin FindIP Shield SDK 1.0.8 so events report the WordPress integration instead of Google Tag Manager.
+* Pass the wordpress integration identifier to the SDK during initialization.
 
 = 0.1.1 =
 
