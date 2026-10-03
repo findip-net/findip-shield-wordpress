@@ -14,6 +14,8 @@ Add privacy-conscious visitor risk intelligence to WordPress and WooCommerce wit
 
 FindIP Shield reports explainable VPN, proxy, Tor, relay, hosting, datacenter, malicious-IP, and network-service signals for website activity.
 
+https://www.youtube.com/watch?v=na0S0UjKIiY
+
 The plugin provides:
 
 * Guided setup using a public Shield site key.
