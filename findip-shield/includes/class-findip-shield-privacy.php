@@ -31,6 +31,8 @@ final class FindIP_Shield_Privacy {
 		$content = '<p>' .
 			esc_html__( 'This site uses FindIP Shield, an external visitor-risk service operated by FindIP. Shield receives connection information such as the visitor IP address and limited website-event metadata, then returns network and reputation signals including VPN, proxy, Tor, hosting, and malicious-IP indicators. The integration does not send form values, passwords, payment details, or message contents to FindIP.', 'findip-shield' ) .
 			'</p><p>' .
+			esc_html__( 'When form protection is switched on for this site, a visitor submitting a protected form may be shown a message, a short wait, or a Cloudflare Turnstile check. Turnstile is loaded from Cloudflare only when a check is shown.', 'findip-shield' ) .
+			'</p><p>' .
 			wp_kses_post(
 				sprintf(
 					/* translators: 1: data documentation URL, 2: privacy policy URL. */
