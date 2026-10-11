@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       FindIP Shield
+ * Plugin Name:       FindIP Shield: VPN, Proxy & Bot Traffic Detection
  * Plugin URI:        https://www.findip.net/shield/overview
- * Description:       Adds privacy-conscious visitor risk intelligence to WordPress and WooCommerce without collecting form values.
- * Version:           0.1.3
+ * Description:       See which visitors, signups and orders come from VPNs, proxies, Tor and hosting networks. Free, no code, and it never reads form values.
+ * Version:           0.2.0
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            FindIP
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FINDIP_SHIELD_VERSION', '0.1.3' );
+define( 'FINDIP_SHIELD_VERSION', '0.2.0' );
 define( 'FINDIP_SHIELD_FILE', __FILE__ );
 define( 'FINDIP_SHIELD_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FINDIP_SHIELD_URL', plugin_dir_url( __FILE__ ) );
