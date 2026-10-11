@@ -13,7 +13,7 @@ Expected files:
 - `icon-128x128.png`
 - `icon-256x256.png`
 - `icon.svg`
-- `screenshot-1.png`
+- `screenshot-1.png` to `screenshot-5.png` (captions in `findip-shield/readme.txt`; 1, 2, 3 and 5 are captured from sample data by `tools/storyboard/listing.mjs` in the private planning repo)
 
 The artwork is original FindIP branding and is distributed under GPL-2.0-or-later
 for use with the FindIP Shield WordPress plugin listing.

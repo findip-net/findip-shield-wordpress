@@ -120,7 +120,11 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 
 == Screenshots ==
 
-1. Configure the public site key, privacy mode, consent behavior, and WooCommerce events from one settings screen.
+1. The Shield dashboard: every visit with its risk score, country and network.
+2. One risky signup explained: the signals and reasons behind the score, and what the page did.
+3. WooCommerce checkout and order events with network context.
+4. Settings: site key, privacy mode, consent behavior and WooCommerce events on one screen.
+5. Visits grouped by network type: VPN, proxy, Tor, hosting and malicious IP.
 
 == Changelog ==
 
