@@ -135,6 +135,7 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 * Visitors who block cookies are recognised across the pages of one visit.
 * Document Cloudflare Turnstile and the storage the SDK uses under External services.
 * New plugin name and description on WordPress.org.
+* Settings page: once a site key is saved, "Open your Shield dashboard" opens this site's Home in Shield (visits, risky visitors, form responses).
 
 = 0.1.3 =
 
