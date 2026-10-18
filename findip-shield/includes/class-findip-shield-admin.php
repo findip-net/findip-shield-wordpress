@@ -102,6 +102,30 @@ final class FindIP_Shield_Admin {
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html__( 'FindIP Shield', 'findip-shield' ); ?></h1>
+			<?php if ( '' !== $settings['site_key'] ) : ?>
+				<?php
+				// Everything about this site's visits lives in the Shield dashboard; the plugin only
+				// carries the public key, so it sends the owner there rather than showing numbers here.
+				$dashboard_url = add_query_arg(
+					array(
+						'siteKey'      => $settings['site_key'],
+						'utm_source'   => 'wordpress',
+						'utm_medium'   => 'plugin',
+						'utm_campaign' => 'shield_platform_block',
+					),
+					'https://www.findip.net/shield/sites'
+				);
+				?>
+				<div class="notice notice-info inline" style="margin:12px 0 20px;padding:12px 16px;">
+					<p style="margin:0 0 8px;">
+						<strong><?php echo esc_html__( 'Shield is set up on this site.', 'findip-shield' ); ?></strong>
+						<?php echo esc_html__( 'Your visits, risky visitors and form responses are in your Shield dashboard: is it working, what happened this week, and what to do.', 'findip-shield' ); ?>
+					</p>
+					<p style="margin:0;">
+						<a class="button button-primary" href="<?php echo esc_url( $dashboard_url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html__( 'Open your Shield dashboard', 'findip-shield' ); ?></a>
+					</p>
+				</div>
+			<?php else : ?>
 			<p>
 				<?php
 				echo wp_kses_post(
@@ -113,6 +137,7 @@ final class FindIP_Shield_Admin {
 				);
 				?>
 			</p>
+			<?php endif; ?>
 			<form method="post" action="options.php">
 				<?php settings_fields( 'findip_shield' ); ?>
 				<table class="form-table" role="presentation">
