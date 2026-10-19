@@ -14,7 +14,7 @@ This is the Shield dashboard that the plugin reports to, shown with sample data:
 
 ## Release status
 
-FindIP Shield is available from the [WordPress.org Plugin Directory](https://wordpress.org/plugins/findip-shield/). Version `0.2.0` pins SDK 1.11.0. It uses strict privacy defaults, never reads form values, and enforces nothing until form protection is switched on for the site in the Shield dashboard. WooCommerce-specific flows remain a separate compatibility test requirement.
+FindIP Shield is available from the [WordPress.org Plugin Directory](https://wordpress.org/plugins/findip-shield/). Version `0.2.1` pins SDK 1.11.0. It uses strict privacy defaults, never reads form values, and enforces nothing until form protection is switched on for the site in the Shield dashboard. WooCommerce-specific flows remain a separate compatibility test requirement.
 
 ## Local test
 
