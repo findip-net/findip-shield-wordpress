@@ -4,7 +4,7 @@ Tags: fraud prevention, vpn detection, proxy detection, bot detection, woocommer
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,6 +128,10 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 
 == Changelog ==
 
+= 0.2.1 =
+
+* Settings page: once a site key is saved, "Open your Shield dashboard" opens this site's Home in Shield (visits, risky visitors, form responses).
+
 = 0.2.0 =
 
 * Pin FindIP Shield SDK 1.11.0. Form protection switched on in the Shield dashboard now works on WordPress and WooCommerce forms: a message, a short wait or a Cloudflare Turnstile check for risky visitors. It stays off until you turn it on.
@@ -135,7 +139,6 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 * Visitors who block cookies are recognised across the pages of one visit.
 * Document Cloudflare Turnstile and the storage the SDK uses under External services.
 * New plugin name and description on WordPress.org.
-* Settings page: once a site key is saved, "Open your Shield dashboard" opens this site's Home in Shield (visits, risky visitors, form responses).
 
 = 0.1.3 =
 
