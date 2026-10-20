@@ -4,7 +4,7 @@ Tags: fraud prevention, vpn detection, proxy detection, bot detection, woocommer
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.2.1
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,7 +132,7 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 
 == Changelog ==
 
-= Unreleased =
+= 0.3.0 =
 
 * Settings page: **Connect to FindIP Shield** links the site in one click (sign in, pick the site, back in WordPress). No key to copy. Pasting a key still works.
 
