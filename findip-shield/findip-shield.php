@@ -28,6 +28,7 @@ define( 'FINDIP_SHIELD_URL', plugin_dir_url( __FILE__ ) );
 
 require_once FINDIP_SHIELD_DIR . 'includes/class-findip-shield.php';
 require_once FINDIP_SHIELD_DIR . 'includes/class-findip-shield-admin.php';
+require_once FINDIP_SHIELD_DIR . 'includes/class-findip-shield-connect.php';
 require_once FINDIP_SHIELD_DIR . 'includes/class-findip-shield-privacy.php';
 require_once FINDIP_SHIELD_DIR . 'includes/class-findip-shield-woocommerce.php';
 

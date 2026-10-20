@@ -21,7 +21,7 @@ https://www.youtube.com/watch?v=na0S0UjKIiY
 * **A free dashboard at findip.net.** Every visit and form submit with its risk score, country, network and reasons. Filter to the risky ones in a click.
 * **Form protection you switch on from the dashboard.** Choose what happens when a risky visitor submits a signup, login or checkout form: a message, a short wait, or a Cloudflare Turnstile check. Off until you turn it on.
 * **WooCommerce context.** Cart, checkout, payment-failure and order-completion events, so you can see which orders came through anonymizing networks.
-* **Two-minute setup.** Install, paste a site key, save. No code, no theme edits.
+* **Two-minute setup.** Install, click Connect, pick your site. No code, no key to copy, no theme edits.
 * **Privacy by design.** The plugin never reads form values, passwords, emails or payment details. Choose strict, balanced or advanced privacy mode, with consent-aware loading.
 * **Free.** Up to 10,000 recorded events per site per day.
 
@@ -51,6 +51,8 @@ When configured, it downloads a pinned JavaScript SDK from `https://cdn.findip.n
 
 The service is required for the plugin to provide risk intelligence. No connection is made until an administrator saves a valid public Shield site key.
 
+When an administrator clicks **Connect to FindIP Shield**, their browser is sent to `https://www.findip.net/shield/connect/wordpress` with this site's home address, the address of this site's admin page to return to, a one-time code and the plugin version. FindIP sends the browser back with the site's public key, which the plugin saves only if the one-time code matches. Nothing is sent unless the administrator clicks the button.
+
 In balanced and advanced privacy modes the SDK keeps a visitor ID in a `_fip_vid` cookie and a `localStorage` entry of the same name, and may send a picture of a form's layout with every value blanked, so the dashboard can show which form an event belongs to. The renderer for that picture is downloaded from `https://cdn.findip.net` only when a picture is requested. Neither happens in strict mode, which is the default.
 
 This plugin can also load Cloudflare Turnstile, an external service operated by Cloudflare. It is loaded from `https://challenges.cloudflare.com` only when form protection is switched on for the site in the Shield dashboard and a visitor is asked to pass a check. Cloudflare then receives that visitor's IP address and browser information.
@@ -67,10 +69,12 @@ This plugin can also load Cloudflare Turnstile, an external service operated by 
 == Installation ==
 
 1. Install and activate the plugin.
-2. Create a site in the FindIP Shield dashboard.
-3. Open **Settings → FindIP Shield** in WordPress.
-4. Paste the public site key and choose the privacy and consent settings.
-5. Save, visit the public site, and confirm the first event in the Shield dashboard.
+2. Open **Settings → FindIP Shield** in WordPress and click **Connect to FindIP Shield**.
+3. Sign in to FindIP (or create a free account), pick this site or create it, and you are sent back to WordPress with the site connected.
+4. Choose the privacy and consent settings, and save.
+5. Visit the public site, and confirm the first event in the Shield dashboard.
+
+Prefer to do it by hand? Create a site in the FindIP Shield dashboard and paste its public site key under **Settings → FindIP Shield** instead.
 
 == Consent integration ==
 
@@ -127,6 +131,10 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 5. Visits grouped by network type: VPN, proxy, Tor, hosting and malicious IP.
 
 == Changelog ==
+
+= Unreleased =
+
+* Settings page: **Connect to FindIP Shield** links the site in one click (sign in, pick the site, back in WordPress). No key to copy. Pasting a key still works.
 
 = 0.2.1 =
 
