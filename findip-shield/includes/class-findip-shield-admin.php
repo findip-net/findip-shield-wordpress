@@ -99,9 +99,21 @@ final class FindIP_Shield_Admin {
 		}
 
 		$settings = FindIP_Shield::settings();
+		// Set by FindIP_Shield_Connect::finish() on its own redirect; only compared against fixed values.
+		$connect = isset( $_GET['findip_connect'] ) ? sanitize_key( wp_unslash( $_GET['findip_connect'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		?>
 		<div class="wrap">
 			<h1><?php echo esc_html__( 'FindIP Shield', 'findip-shield' ); ?></h1>
+			<?php if ( 'connected' === $connect ) : ?>
+				<div class="notice notice-success is-dismissible"><p>
+					<strong><?php echo esc_html__( 'Connected.', 'findip-shield' ); ?></strong>
+					<?php echo esc_html__( 'Now open your site once, in a private window if you use a cookie banner or an ad blocker. Your first visit shows in the Shield dashboard within seconds.', 'findip-shield' ); ?>
+				</p></div>
+			<?php elseif ( 'expired' === $connect ) : ?>
+				<div class="notice notice-error is-dismissible"><p><?php echo esc_html__( 'That connection link has expired or was opened by another account. Click Connect to FindIP Shield again.', 'findip-shield' ); ?></p></div>
+			<?php elseif ( 'invalid_key' === $connect ) : ?>
+				<div class="notice notice-error is-dismissible"><p><?php echo esc_html__( 'FindIP did not send back a valid site key. Click Connect to FindIP Shield again, or paste the key below.', 'findip-shield' ); ?></p></div>
+			<?php endif; ?>
 			<?php if ( '' !== $settings['site_key'] ) : ?>
 				<?php
 				// Everything about this site's visits lives in the Shield dashboard; the plugin only
@@ -123,20 +135,20 @@ final class FindIP_Shield_Admin {
 					</p>
 					<p style="margin:0;">
 						<a class="button button-primary" href="<?php echo esc_url( $dashboard_url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html__( 'Open your Shield dashboard', 'findip-shield' ); ?></a>
+						<a class="button" href="<?php echo esc_url( FindIP_Shield_Connect::start_url() ); ?>" style="margin-left:6px;"><?php echo esc_html__( 'Connect a different Shield site', 'findip-shield' ); ?></a>
 					</p>
 				</div>
 			<?php else : ?>
-			<p>
-				<?php
-				echo wp_kses_post(
-					sprintf(
-						/* translators: %s: FindIP Shield dashboard URL. */
-						__( 'Create a site in the <a href="%s" target="_blank" rel="noopener noreferrer">FindIP Shield dashboard</a>, then paste its public key below.', 'findip-shield' ),
-						esc_url( 'https://www.findip.net/shield' )
-					)
-				);
-				?>
-			</p>
+				<div class="notice notice-info inline" style="margin:12px 0 20px;padding:12px 16px;">
+					<p style="margin:0 0 8px;">
+						<strong><?php echo esc_html__( 'Connect this site to FindIP Shield.', 'findip-shield' ); ?></strong>
+						<?php echo esc_html__( 'Sign in or create a free account, pick this site, and you are back here. No key to copy.', 'findip-shield' ); ?>
+					</p>
+					<p style="margin:0;">
+						<a class="button button-primary button-hero" href="<?php echo esc_url( FindIP_Shield_Connect::start_url() ); ?>"><?php echo esc_html__( 'Connect to FindIP Shield', 'findip-shield' ); ?></a>
+					</p>
+					<p class="description" style="margin:8px 0 0;"><?php echo esc_html__( 'Already have a site key? Paste it below instead.', 'findip-shield' ); ?></p>
+				</div>
 			<?php endif; ?>
 			<form method="post" action="options.php">
 				<?php settings_fields( 'findip_shield' ); ?>

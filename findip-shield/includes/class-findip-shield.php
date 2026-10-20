@@ -42,6 +42,7 @@ final class FindIP_Shield {
 	 */
 	private function __construct() {
 		new FindIP_Shield_Admin();
+		new FindIP_Shield_Connect();
 		new FindIP_Shield_Privacy();
 		new FindIP_Shield_WooCommerce();
 
