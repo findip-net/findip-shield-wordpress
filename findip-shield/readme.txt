@@ -4,7 +4,7 @@ Tags: fraud prevention, vpn detection, proxy detection, bot detection, woocommer
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,10 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 5. Visits grouped by network type: VPN, proxy, Tor, hosting and malicious IP.
 
 == Changelog ==
+
+= 0.3.1 =
+
+* Pin FindIP Shield SDK 1.13.1. A Cloudflare Turnstile check on a protected form can no longer trap a visitor: if the Turnstile key does not work on your domain, the form is sent as normal, and after a failed check the visitor can close the dialog and try again. Before, a misconfigured key left challenged visitors in a dialog they could not close, and the form was never sent.
 
 = 0.3.0 =
 
