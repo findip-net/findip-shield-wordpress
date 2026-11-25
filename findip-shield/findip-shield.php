@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       FindIP Shield: VPN, Proxy & Bot Traffic Detection
+ * Plugin Name:       FindIP Shield: Block VPN, Proxy & Fake Signups
  * Plugin URI:        https://www.findip.net/shield/overview
- * Description:       See which visitors, signups and orders come from VPNs, proxies, Tor and hosting networks. Free, no code, and it never reads form values.
- * Version:           0.3.1
+ * Description:       Stop fake signups, logins and orders from VPNs, proxies, Tor and bots, and see every risky visitor with the reason. Free, no code.
+ * Version:           0.4.0
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            FindIP
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'FINDIP_SHIELD_VERSION', '0.3.1' );
+define( 'FINDIP_SHIELD_VERSION', '0.4.0' );
 define( 'FINDIP_SHIELD_FILE', __FILE__ );
 define( 'FINDIP_SHIELD_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FINDIP_SHIELD_URL', plugin_dir_url( __FILE__ ) );
