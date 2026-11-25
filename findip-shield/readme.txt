@@ -1,14 +1,14 @@
-=== FindIP Shield: VPN, Proxy & Bot Traffic Detection ===
+=== FindIP Shield: Block VPN, Proxy & Fake Signups ===
 Contributors: findipshield
-Tags: fraud prevention, vpn detection, proxy detection, bot detection, woocommerce
+Tags: block vpn, vpn detection, proxy detection, fake registration, woocommerce fraud
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.3.1
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-See which visitors, signups and orders come from VPNs, proxies, Tor and hosting networks. Free, no code, and it never reads form values.
+Stop fake signups, logins and orders from VPNs, proxies, Tor and bots, and see every risky visitor with the reason. Free, no code.
 
 == Description ==
 
@@ -69,7 +69,7 @@ This plugin can also load Cloudflare Turnstile, an external service operated by 
 == Installation ==
 
 1. Install and activate the plugin.
-2. Open **Settings → FindIP Shield** in WordPress and click **Connect to FindIP Shield**.
+2. Click **Connect to FindIP Shield** in the notice on your Dashboard or Plugins screen (or open **Settings → FindIP Shield**).
 3. Sign in to FindIP (or create a free account), pick this site or create it, and you are sent back to WordPress with the site connected.
 4. Choose the privacy and consent settings, and save.
 5. Visit the public site, and confirm the first event in the Shield dashboard.
@@ -131,6 +131,11 @@ Email info@findip.net. Report security issues privately to security@findip.net.
 5. Visits grouped by network type: VPN, proxy, Tor, hosting and malicious IP.
 
 == Changelog ==
+
+= 0.4.0 =
+
+* Until the site is connected, the Dashboard and Plugins screens show a short notice with the **Connect to FindIP Shield** button, so setup no longer depends on finding the settings page. Each administrator can hide it with **Not now**; it never appears once a site key is saved.
+* New plugin name and description on WordPress.org, matching what site owners search for.
 
 = 0.3.1 =
 

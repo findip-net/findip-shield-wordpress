@@ -11,3 +11,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 delete_option( 'findip_shield_settings' );
 delete_site_option( 'findip_shield_settings' );
+delete_metadata( 'user', 0, 'findip_shield_setup_notice_dismissed', '', true );

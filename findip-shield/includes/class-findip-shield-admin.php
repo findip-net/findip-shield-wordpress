@@ -13,12 +13,79 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Registers and renders privacy-safe plugin settings.
  */
 final class FindIP_Shield_Admin {
+	const DISMISS_ACTION      = 'findip_shield_dismiss_setup';
+	const DISMISSED_USER_META = 'findip_shield_setup_notice_dismissed';
+
 	/**
 	 * Register admin hooks.
 	 */
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_page' ) );
+		add_action( 'admin_notices', array( $this, 'render_setup_notice' ) );
+		add_action( 'admin_post_' . self::DISMISS_ACTION, array( $this, 'dismiss_setup_notice' ) );
+	}
+
+	/**
+	 * Whether the "finish setup" notice belongs on this request: an administrator, no site key
+	 * yet, not dismissed by this user, and only on the Dashboard and Plugins screens (the
+	 * settings page has its own Connect button).
+	 *
+	 * @param string $screen_id Current admin screen id.
+	 * @return bool
+	 */
+	public static function should_show_setup_notice( $screen_id ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return false;
+		}
+		if ( ! in_array( $screen_id, array( 'dashboard', 'plugins' ), true ) ) {
+			return false;
+		}
+		$settings = FindIP_Shield::settings();
+		if ( '' !== (string) $settings['site_key'] ) {
+			return false;
+		}
+
+		return ! get_user_meta( get_current_user_id(), self::DISMISSED_USER_META, true );
+	}
+
+	/**
+	 * After activation the plugin does nothing until it is connected: say so where the
+	 * administrator lands, with the Connect button one click away.
+	 */
+	public function render_setup_notice() {
+		$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+		if ( ! $screen || ! self::should_show_setup_notice( $screen->id ) ) {
+			return;
+		}
+
+		$dismiss_url = wp_nonce_url( admin_url( 'admin-post.php?action=' . self::DISMISS_ACTION ), self::DISMISS_ACTION );
+		?>
+		<div class="notice notice-info">
+			<p>
+				<strong><?php echo esc_html__( 'FindIP Shield is installed but not connected yet.', 'findip-shield' ); ?></strong>
+				<?php echo esc_html__( 'Connect it to see which visitors, signups and orders come from VPNs, proxies and bots. It takes two minutes and no code.', 'findip-shield' ); ?>
+			</p>
+			<p>
+				<a class="button button-primary" href="<?php echo esc_url( FindIP_Shield_Connect::start_url() ); ?>"><?php echo esc_html__( 'Connect to FindIP Shield', 'findip-shield' ); ?></a>
+				<a href="<?php echo esc_url( $dismiss_url ); ?>" style="margin-left:10px;"><?php echo esc_html__( 'Not now', 'findip-shield' ); ?></a>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * "Not now": hide the setup notice for this administrator, then go back where they were.
+	 */
+	public function dismiss_setup_notice() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'You are not allowed to do this.', 'findip-shield' ), '', array( 'response' => 403 ) );
+		}
+		check_admin_referer( self::DISMISS_ACTION );
+
+		update_user_meta( get_current_user_id(), self::DISMISSED_USER_META, 1 );
+		wp_safe_redirect( wp_get_referer() ? wp_get_referer() : admin_url() );
+		exit;
 	}
 
 	/**
